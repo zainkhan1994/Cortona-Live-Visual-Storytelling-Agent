@@ -189,7 +189,7 @@ export class GdmLiveAudio extends LitElement {
                     this.orbSpeed = (speed as number) || 1;
                     this.orbIntensity = (intensity as number) || 1;
                     
-                    this.generateObjectImage(objectName as string);
+                    await this.generateObjectImage(objectName as string);
                     functionResponses.push({
                       id: call.id,
                       name: call.name,
