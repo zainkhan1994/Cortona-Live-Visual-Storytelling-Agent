@@ -11,8 +11,10 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [],
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        // Keep these for backwards compatibility with local .env.local setups,
+        // but the app now also supports runtime API key entry via the UI.
+        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY ?? ''),
+        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY ?? '')
       },
       resolve: {
         alias: {
